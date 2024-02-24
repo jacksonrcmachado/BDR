@@ -20,7 +20,7 @@ drop table funcionarios;
 drop table caixas;
 
 alter table cliente rename to tbl_cliente;     
-alter table tbl_cliente add column IDADE text;          
+alter table tbl_cliente add column IDADE integer;          
 alter table tbl_cliente add column CPF text;
 
 alter table conta rename to tbl_conta;               
@@ -28,3 +28,5 @@ alter table conta rename to tbl_conta;
 alter table emprestimo rename to tbl_emprestimo;
 
 alter table agencia rename to tbl_agencia;
+
+create schema SCH_JACKSON;
