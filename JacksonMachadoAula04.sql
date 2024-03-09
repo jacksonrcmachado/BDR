@@ -23,3 +23,5 @@ VALUES
 (3, 'Pedro Almeida', 'Belo Horizonte',  'Rua C, 789' ),
 (4, 'Ana Oliveira',  'Salvador',        'Av. D 1011' ),
 (5, 'Carlos Lima',   'Brasília',        'Rua E, 1213' );
+
+-- Inserir dados na tabela tbl_titulo
