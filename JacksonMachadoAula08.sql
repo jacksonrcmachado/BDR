@@ -66,13 +66,25 @@ FROM tbl_peca
 WHERE cidade = 'LONDRES';
 
 --8 Encontre o nome das peças que estão disponíveis em estoque em Londres e não estão disponíveis em estoque em Paris:
-SELECT nome 
-FROM tbl_peca 
-WHERE cidade = 'PARIS'
-INTERSECT 
-SELECT nome
-FROM tbl_peca 
-WHERE cidade = 'LONDRES';
+SELECT DISTINCT(nome)
+FROM tbl_peca
+WHERE cod_peca  
+IN (
+SELECT cod_peca
+FROM tbl_estoque
+WHERE cod_fornecedor 
+IN (
+SELECT cod_fornecedor
+FROM tbl_fornecedor
+WHERE cidade != 'PARIS'
+));
 
 
 --9 Quais os codigos das peças que possuem maior estoque do que a peça de codigo 2?
+SELECT distinct(cod_peca)
+FROM tbl_estoque
+WHERE quantidade > (
+SELECT quantidade
+FROM tbl_estoque
+WHERE cod_peca = 2)
+order by cod_peca;
